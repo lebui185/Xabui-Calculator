@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane stylesheets="@../style/night.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <CheckMenuItem fx:id="checkMenuItemVirtualKeyboard" mnemonicParsing="false" onAction="#checkMenuItemVirtualKeyboardOnAction" text="Virtual keyboard" />
+                  <CheckMenuItem fx:id="checkMenuItemHistory" mnemonicParsing="false" onAction="#checkMenuItemHistoryOnAction" text="History" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Mode">
+               <items>
+                  <RadioMenuItem fx:id="radioMenuItemDegree" mnemonicParsing="false" onAction="#radioMenuItemDegreeOnAction" selected="true" text="Degree">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="angularMeasure"/>
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="radioMenuItemRadian" mnemonicParsing="false" onAction="#radioMenuItemRadianOnAction" text="Radian" toggleGroup="$angularMeasure" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#menuItemAboutOnAction" text="About" />
+                  <MenuItem fx:id="menuItemUserGuide" mnemonicParsing="false" onAction="#menuItemUserGuideOnAction" text="User's guide" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <HBox fx:id="baseBox" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="calculateBox">
+               <children>
+                  <TextField fx:id="inputField" onAction="#inputFieldOnAction" onKeyReleased="#inputFieldOnKeyReleased">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="resultField" alignment="CENTER_RIGHT" editable="false">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <HBox fx:id="keyboardBox" alignment="BOTTOM_RIGHT" spacing="15.0">
+                     <children>
+                        <GridPane hgap="2.0" vgap="2.0">
+                           <children>
+                              <Button fx:id="buttonSin" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="sin" GridPane.rowIndex="2" />
+                              <Button fx:id="buttonCos" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="cos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Button fx:id="buttonTan" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="tan" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button fx:id="buttonAbs" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="abs" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button fx:id="buttonLog" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="log" GridPane.rowIndex="4" />
+                              <Button fx:id="buttonLn" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="ln" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Button fx:id="buttonSqrt" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="√" GridPane.rowIndex="5" />
+                              <Button fx:id="buttonPi" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="π" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Button fx:id="buttonE" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="e" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Button fx:id="buttonAsin" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="asin" GridPane.rowIndex="3" />
+                              <Button fx:id="buttonAcos" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="acos" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button fx:id="buttonAtan" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="atan" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Button fx:id="buttonPow" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="^" GridPane.rowIndex="1" />
+                              <Button fx:id="buttonFactorial" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="!" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="buttonCbrt" mnemonicParsing="false" onAction="#buttonFunctionOnAction" prefHeight="40.0" prefWidth="50.0" text="∛" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Button>
+                              <Region layoutX="85.0" layoutY="10.0" prefHeight="40.0" prefWidth="50.0" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                        <GridPane hgap="2.0" vgap="2.0">
+                           <children>
+                              <Button fx:id="buttonDel" mnemonicParsing="false" onAction="#buttonDelOnAction" prefHeight="40.0" prefWidth="50.0" text="DEL" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="+" GridPane.rowIndex="1" />
+                              <Button fx:id="buttonSub" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="buttonMul" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="*" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button fx:id="buttonDiv" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <Button fx:id="button7" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="7" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="button8" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="button9" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonLeftParen" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="(" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <Button fx:id="button4" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="4" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="button5" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="button6" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonRightParen" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text=")" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <Button fx:id="button1" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="button2" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="button3" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonEqual" mnemonicParsing="false" onAction="#buttonEqualOnAction" prefHeight="82.0" prefWidth="50.0" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.rowSpan="2" />
+                              <Button fx:id="buttonDot" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="." GridPane.rowIndex="5" />
+                              <Button fx:id="button0" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonAns" mnemonicParsing="false" onAction="#buttonInputOnAction" prefHeight="40.0" prefWidth="50.0" text="ans" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Button fx:id="buttonRightArrow" mnemonicParsing="false" onAction="#buttonRightArrowOnAction" prefHeight="40.0" prefWidth="50.0" text="&gt;" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonLeftArrow" mnemonicParsing="false" onAction="#buttonLeftArrowOnAction" prefHeight="40.0" prefWidth="50.0" text="&lt;">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font></Button>
+                              <Button fx:id="buttonClear" mnemonicParsing="false" onAction="#buttonClearOnAction" prefHeight="40.0" prefWidth="50.0" text="C" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font></Button>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="historyBox" alignment="TOP_CENTER" spacing="10.0">
+               <children>
+                  <Label fx:id="historyLabel" text="History">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Label>
+                  <ListView fx:id="listHistory" prefHeight="250.0" prefWidth="250.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></ListView>
+                  <HBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <Button fx:id="buttonAddToInput" mnemonicParsing="false" onAction="#buttonAddToInputOnAction" text="Add to input" />
+                        <Button fx:id="buttonClearSelected" mnemonicParsing="false" onAction="#buttonClearSelectedOnAction" text="Clear selected" />
+                        <Button fx:id="buttonClearAll" mnemonicParsing="false" onAction="#buttonClearAllOnAction" text="Clear all" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </HBox>
+   </center>
+</BorderPane>

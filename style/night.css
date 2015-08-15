@@ -1,0 +1,143 @@
+
+.root {
+    -fx-background-color: #181818;
+    -fx-font-size: 10pt;
+}
+
+
+.menu-bar {
+    -fx-background-color: derive(#1d1d1d,20%);
+}
+
+.context-menu {
+    -fx-background-color: derive(#1d1d1d,20%);
+}
+
+.menu-bar .label {
+    -fx-font-size: 10pt;
+    -fx-text-fill: white;
+}
+
+.menu-item {
+    -fx-background-color: derive(#1d1d1d,20%);
+    -fx-font-size: 10pt;
+    -fx-text-fill: white;
+}
+
+.menu-item: focused {
+    -fx-background-color: -fx-accent;
+}
+
+.menu-item {
+    -fx-background-color: derive(#1d1d1d,20%);
+    -fx-font-size: 10pt;
+    -fx-text-fill: white;
+}
+
+.check-menu-item:checked > .left-container > .check {
+    -fx-background-color: white;
+}
+
+.radio-menu-item:checked > .left-container > .radio {
+    -fx-background-color: white;
+}
+
+#input-field {
+
+    -fx-border-width: 1 1 0 1;
+    -fx-border-color: white;
+
+    -fx-background-color: #181818;
+
+    -fx-text-fill: #F8F8F8;
+    -fx-font-size: 13pt;
+}
+
+#result-field {
+    -fx-border-width: 0 1 1 1;
+    -fx-border-color: white;
+
+    -fx-background-color: #181818;
+
+    -fx-text-fill: #F8F8F8;
+    -fx-font-weight: bold;
+    -fx-font-size: 15pt;
+}
+
+#number-button {
+    -fx-background-color: #585858;
+    -fx-text-fill: #F8F8F8;
+    -fx-font-size: 13pt;
+    -fx-font-weight: bold;
+    -fx-background-radius: 0;
+}
+
+#function-button {
+    -fx-background-color: #383838;
+    -fx-text-fill: #F8F8F8;
+    -fx-font-size: 11pt;
+    -fx-background-radius: 0;
+}
+
+#control-button {
+    -fx-background-color: blue;
+    -fx-text-fill: #F8F8F8;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+    -fx-background-radius: 0;
+}
+
+#clear-button {
+    -fx-background-color: #ff2c2c;
+    -fx-text-fill: #F8F8F8;
+    -fx-font-size: 11pt;
+    -fx-background-radius: 0;
+}
+
+#normal-button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #1d1d1d;
+    -fx-font-size: 10pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+#normal-button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+#normal-button:pressed, .button:default:hover:pressed {
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
+}
+
+#normal-button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+#history-label {
+    -fx-font-size: 12pt;
+    -fx-text-fill: white;
+}
+
+.list-view {
+    -fx-border-color: white;
+    -fx-background-color: #181818;
+}
+
+.list-cell {
+    -fx-background-color: #181818;
+    -fx-font-size: 12pt;
+    -fx-text-fill: white;
+}
+
+.list-cell: focused {
+    -fx-background-color: -fx-accent;
+}
