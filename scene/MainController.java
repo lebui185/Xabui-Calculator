@@ -217,17 +217,6 @@ public class MainController implements Initializable
         alert.showAndWait();
     }
 
-    @FXML
-    private void menuItemUserGuideOnAction()
-    {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.initStyle(StageStyle.UTILITY);
-        alert.setTitle("User's guide");
-        alert.setHeaderText("User's guide");
-        alert.setContentText("Use keyboard ");
-        alert.showAndWait();
-    }
-
     //
     //  InputField event
     //

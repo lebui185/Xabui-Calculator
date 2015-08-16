@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+
 <BorderPane stylesheets="@../style/night.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
@@ -18,7 +20,7 @@
                <items>
                   <RadioMenuItem fx:id="radioMenuItemDegree" mnemonicParsing="false" onAction="#radioMenuItemDegreeOnAction" selected="true" text="Degree">
                      <toggleGroup>
-                        <ToggleGroup fx:id="angularMeasure"/>
+                        <ToggleGroup fx:id="angularMeasure" />
                      </toggleGroup>
                   </RadioMenuItem>
                   <RadioMenuItem fx:id="radioMenuItemRadian" mnemonicParsing="false" onAction="#radioMenuItemRadianOnAction" text="Radian" toggleGroup="$angularMeasure" />
@@ -27,7 +29,6 @@
             <Menu mnemonicParsing="false" text="Help">
                <items>
                   <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#menuItemAboutOnAction" text="About" />
-                  <MenuItem fx:id="menuItemUserGuide" mnemonicParsing="false" onAction="#menuItemUserGuideOnAction" text="User's guide" />
                </items>
             </Menu>
          </menus>
@@ -38,7 +39,7 @@
          <children>
             <VBox fx:id="calculateBox">
                <children>
-                  <TextField fx:id="inputField" onAction="#inputFieldOnAction" onKeyReleased="#inputFieldOnKeyReleased">
+                  <TextField fx:id="inputField" onAction="#inputFieldOnAction" onKeyReleased="#inputFieldOnKeyReleased" prefWidth="375.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
